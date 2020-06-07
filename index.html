@@ -9,38 +9,45 @@
 
  
 
-<button onclick="dxs()">запустить счетчик 2 </button>
+<button onclick="counter()">запустить счетчик </button>
 
-<button onclick="dx()">показ имени 2 </button>
+<button onclick="name()">показ имени </button>
 
 
-<button onclick="alert(1)"> alert  </button>
+<button onclick="show()">показ  </button>
+
+
+<button onclick="alert(1)"> Блокировка кода с помощью Alert  </button>
 
 
 <script>
-
-
-
-
- 
+ <!-- подключение ВебВоркера -->
  work = new Worker("webWorker2.js");
  
- function dxs(){
-	work.postMessage('counter');
-
-}
-
- 
- 
- 
-function dx(){
-	work.postMessage('start');
-
-}
-
+ <!-- Событие Принимает сообщения от воркера и выдает их в консоль не важно что там пришло счетчик или имя -->
 work.onmessage = function(e){
 	console.log(e.data);
 }
+ 
+ 
+ <!-- функция для запуска счетчика, (показывает в консоль), внутри файла воркера есть функция счетчик будет просто прибавлять +1 к переменой до бесконечности -->
+ function counter(){
+	work.postMessage('counter');
+}
+
+
+ function show(){
+	work.postMessage('ale()');
+}
+
+<!-- Просто показать имя (показывает в консоль) -->
+function name(){
+	work.postMessage('start');
+}
+
+
+
+
 
 </script>
 

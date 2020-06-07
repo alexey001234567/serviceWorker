@@ -1,29 +1,38 @@
-	var i = 0;
-	var nam = null;
-
-	function timedCount() {
-	  i = i + 1;
-	  postMessage(i);
-	  setTimeout("timedCount()",500);
-	}
-
-	onmessage  = function (e){
-		if (e.data =='start'){
-			nam = 'John name';
-			postMessage(nam);
-		}
-		
-		if (e.data =='counter'){
-			 timedCount();
-		}
-		
 	
-	}
+	
+ // просто переменные которые должны быть в глобальной области видимости чтобы потом их пересылать в основной файл, хотя можно и в функциональной области
+ // видимости сделать но это не важно вообще
+ var i = 0;
+ var nam = null;
+ 
+ // функция счетчик включает счетчик и через фунцию "postMessage" отправляет каждую итерацию данные на основной файл а тот принимает через "onmessage"
+ function timedCount() {
+   i = i + 1;
+   postMessage(i);
+   setTimeout("timedCount()",500);
+ }
+ 
+  function ale() {
+alert(123);
+ }
+ 
+ 
+ 
+ 
+ // Событие onmessage , как только придет сообщение на воркер со значением "start" или "counter" то он обрабатывает сообщеня
+ // в соответствии с условиями, и таких уловий можно сделать много
+ onmessage  = function (e){
+ 	// if (e.data =='start'){
+ 		// nam = 'John name';
+ 		// postMessage(nam);
+ 	// }
+ 	
+ 	// if (e.data =='counter'){
+ 		 // timedCount();
+ 	// }
+	e.data;
+ 	
+ 
+ }
 	
  
-	
-	// self.addEventListener('message', function(e) {
-  // postMessage(x * 2); // Намеренная ошибка. 'x' не определено.
-// };
-	
-	
