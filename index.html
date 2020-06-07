@@ -12,11 +12,7 @@
 <button onclick="counter()">запустить счетчик </button>
 
 <button onclick="name()">показ имени </button>
-
-
-<button onclick="show()">показ  </button>
-
-
+<button onclick="cds()">cds</button>
 <button onclick="alert(1)"> Блокировка кода с помощью Alert  </button>
 
 
@@ -35,18 +31,17 @@ work.onmessage = function(e){
 	work.postMessage('counter');
 }
 
-
- function show(){
-	work.postMessage('ale()');
-}
-
 <!-- Просто показать имя (показывает в консоль) -->
 function name(){
 	work.postMessage('start');
 }
 
-
-
+function cds(){
+	
+	work.postMessage('function dfgh(){alert(123440);}; dfgh();  ');
+}
+	
+ 
 
 
 </script>

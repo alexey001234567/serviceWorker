@@ -12,13 +12,6 @@
    setTimeout("timedCount()",500);
  }
  
-  function ale() {
-alert(123);
- }
- 
- 
- 
- 
  // Событие onmessage , как только придет сообщение на воркер со значением "start" или "counter" то он обрабатывает сообщеня
  // в соответствии с условиями, и таких уловий можно сделать много
  onmessage  = function (e){
@@ -30,9 +23,6 @@ alert(123);
  	// if (e.data =='counter'){
  		 // timedCount();
  	// }
-	e.data;
  	
- 
+	e.data;
  }
-	
- 
