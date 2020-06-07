@@ -7,13 +7,13 @@
 
 
 
-<button onclick="timу()">запустить счетчик</button>
+<!-- <button onclick="timу()">запустить счетчик</button> -->
 
 <button onclick="name()">показ имени</button>
 
 
 
-<button onclick="tx()">запустить счетчик 2 </button>
+<!-- <button onclick="tx()">запустить счетчик 2 </button> -->
 
 <button onclick="dx()">показ имени 2 </button>
 
@@ -27,12 +27,12 @@
  
  w = new Worker("webWorker.js");
  
-function timу(){
-	w.postMessage(timedCount());
-	w.onmessage = function(e){
-		console.log(e.data);
-	}
-}
+<!-- function timу(){ -->
+	<!-- w.postMessage(timedCount()); -->
+	<!-- w.onmessage = function(e){ -->
+		<!-- console.log(e.data); -->
+	<!-- } -->
+<!-- } -->
 
 function name(){
 	w.postMessage('namesd()');
@@ -41,20 +41,24 @@ function name(){
 	}
 }
  
- function tx(){
-	w.postMessage(timedCount());
-	w.onmessage = function(e){
-		console.log(e.data);
-	}
-}
+ 
+ 
+ <!-- function tx(){ -->
+	<!-- w.postMessage(timedCount()); -->
+	<!-- w.onmessage = function(e){ -->
+		<!-- console.log(e.data); -->
+	<!-- } -->
+<!-- } -->
 
 function dx(){
-	w.postMessage('namesd()');
-	w.onmessage = function(e){
-		console.log(e.data);
-	}
+	w.postMessage('start');
+
 }
- 
+
+w.onmessage = function(e){
+	console.log(e.data);
+}
+
 </script>
 
 </body>
