@@ -7,13 +7,9 @@
 
 
 
-<!-- <button onclick="timу()">запустить счетчик</button> -->
+ 
 
-<button onclick="name()">показ имени</button>
-
-
-
-<!-- <button onclick="tx()">запустить счетчик 2 </button> -->
+<button onclick="dxs()">запустить счетчик 2 </button>
 
 <button onclick="dx()">показ имени 2 </button>
 
@@ -27,29 +23,14 @@
  
  work = new Worker("webWorker2.js");
  
-<!-- function timу(){ -->
-	<!-- work.postMessage(timedCount()); -->
-	<!-- work.onmessage = function(e){ -->
-		<!-- console.log(e.data); -->
-	<!-- } -->
-<!-- } -->
+ function dxs(){
+	work.postMessage('counter');
 
-function name(){
-	work.postMessage('namesd()');
-	work.onmessage = function(e){
-		console.log(e.data);
-	}
 }
- 
- 
- 
- <!-- function tx(){ -->
-	<!-- work.postMessage(timedCount()); -->
-	<!-- work.onmessage = function(e){ -->
-		<!-- console.log(e.data); -->
-	<!-- } -->
-<!-- } -->
 
+ 
+ 
+ 
 function dx(){
 	work.postMessage('start');
 
