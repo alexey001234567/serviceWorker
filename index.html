@@ -25,18 +25,18 @@
 
 
  
- w = new Worker("webWorker.js");
+ work = new Worker("webWorker2.js");
  
 <!-- function timу(){ -->
-	<!-- w.postMessage(timedCount()); -->
-	<!-- w.onmessage = function(e){ -->
+	<!-- work.postMessage(timedCount()); -->
+	<!-- work.onmessage = function(e){ -->
 		<!-- console.log(e.data); -->
 	<!-- } -->
 <!-- } -->
 
 function name(){
-	w.postMessage('namesd()');
-	w.onmessage = function(e){
+	work.postMessage('namesd()');
+	work.onmessage = function(e){
 		console.log(e.data);
 	}
 }
@@ -44,18 +44,18 @@ function name(){
  
  
  <!-- function tx(){ -->
-	<!-- w.postMessage(timedCount()); -->
-	<!-- w.onmessage = function(e){ -->
+	<!-- work.postMessage(timedCount()); -->
+	<!-- work.onmessage = function(e){ -->
 		<!-- console.log(e.data); -->
 	<!-- } -->
 <!-- } -->
 
 function dx(){
-	w.postMessage('start');
+	work.postMessage('start');
 
 }
 
-w.onmessage = function(e){
+work.onmessage = function(e){
 	console.log(e.data);
 }
 
